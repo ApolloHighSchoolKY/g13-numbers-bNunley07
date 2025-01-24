@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -12,6 +12,7 @@ public class Number
 	//Default Constructor
 	public Number()
 	{
+		//autoboxing
 		number=0;
 	}
 
@@ -35,6 +36,10 @@ public class Number
 	public boolean isOdd()
 	{
 		//If the number is odd, return true
+		if(number %2 == 0)
+			return false;
+
+		return true;
 	}
 
 	public boolean isPerfect()
@@ -42,10 +47,15 @@ public class Number
 		int total=0;
 
 		//A perfect number is any number equal to the sum of its divisors
-		//excluding itself.
-
-
+		//excluding itself.EX: 4... 1,2 =3 not perfect---- 6...1,2,3 =6 perfect 
+		//use mod---------- for loop?i= 1; i> number;i++ if 6%i==0 return total += 
+		for(int i =1; i< number;i++)
+		
+		if(number%i ==0)
+			total += i;
+	
 		return (number==total);
+		
 	}
 
 	public String toString( )
@@ -57,6 +67,7 @@ public class Number
 		returnString += number + " isOdd == " + isOdd() + "\n";
 		returnString += number + " isPerfect == " + isPerfect() + "\n\n";
 
-		return "" + returnString;
+		//return "" + returnString;
+		return "" + number;
 	}
 }
